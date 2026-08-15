@@ -1,263 +1,1353 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Robing</title>
 
     <style>
-        body {
-            margin: 0;
-            background: #d6e9f7;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
-        }
 
-        .topbar {
-            height: 42px;
-            background: linear-gradient(#6fb1df, #3f8fc7);
-            border-bottom: 1px solid #245d83;
-            display: flex;
-            align-items: center;
-            padding: 0 15px;
+        /* =========================================================
+           ROBING - 2011 STYLE WEBSITE
+           ========================================================= */
+
+        * {
             box-sizing: border-box;
         }
 
-        .logo {
-            font-size: 25px;
-            font-weight: bold;
-            color: white;
-            text-shadow: 1px 1px #555;
-            margin-right: 30px;
+        body {
+            margin: 0;
+            padding: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #c9e6f7 0px,
+                    #e7f4fc 170px,
+                    #d9eaf4 170px,
+                    #d9eaf4 100%
+                );
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: #333;
         }
 
-        .nav {
-            display: flex;
-            gap: 5px;
-        }
 
-        .nav a {
-            color: white;
-            text-decoration: none;
-            padding: 7px 12px;
-            border: 1px solid #3477a3;
-            background: linear-gradient(#78b9e1, #4b96c7);
-            border-radius: 2px;
-        }
+        /* =========================================================
+           TOP HEADER
+           ========================================================= */
 
-        .nav a:hover {
-            background: linear-gradient(#91c9e9, #5ba3d1);
-        }
+        .top-header {
+            height: 52px;
 
-        .account {
-            margin-left: auto;
-            color: white;
-        }
+            background:
+                linear-gradient(
+                    to bottom,
+                    #73b6df 0%,
+                    #5da4d0 48%,
+                    #438bb9 50%,
+                    #377ca8 100%
+                );
 
-        .page {
-            width: 960px;
-            margin: 12px auto;
-        }
+            border-bottom: 1px solid #245a7c;
 
-        .banner {
-            height: 180px;
-            background: white;
-            border: 1px solid #aaa;
-            box-shadow: 0 1px 3px #999;
-            overflow: hidden;
+            box-shadow:
+                0 1px 3px rgba(0, 0, 0, 0.35);
+
             display: flex;
             align-items: center;
-            justify-content: center;
+
+            padding-left: 15px;
+            padding-right: 15px;
         }
 
-        .banner h1 {
-            font-size: 64px;
-            color: white;
-            -webkit-text-stroke: 4px #ff2222;
-            text-shadow: 2px 3px #777;
-            transform: rotate(-2deg);
-        }
 
-        .columns {
+        /* =========================================================
+           LOGO
+           ========================================================= */
+
+        .site-logo {
+            height: 42px;
+
             display: flex;
+            align-items: center;
+
+            margin-right: 20px;
+        }
+
+        .site-logo img {
+            max-height: 40px;
+            width: auto;
+            display: block;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+           ========================================================= */
+
+        .navigation {
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+
+            gap: 3px;
+        }
+
+        .navigation a {
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            padding: 8px 12px;
+
+            border-left: 1px solid rgba(255,255,255,0.15);
+            border-right: 1px solid rgba(0,0,0,0.15);
+
+            text-shadow:
+                1px 1px 1px #356986;
+        }
+
+        .navigation a:hover {
+            background:
+                linear-gradient(
+                    #8bc7e8,
+                    #579ac5
+                );
+        }
+
+
+        /* =========================================================
+           ACCOUNT AREA
+           ========================================================= */
+
+        .account-area {
+            margin-left: auto;
+
+            display: flex;
+            align-items: center;
+
+            height: 100%;
+
+            color: white;
+
+            font-weight: bold;
+        }
+
+        .account-area a {
+            color: white;
+            text-decoration: none;
+        }
+
+
+        /* =========================================================
+           MAIN PAGE
+           ========================================================= */
+
+        .page {
+            width: 1000px;
+
+            max-width: calc(100% - 20px);
+
+            margin: 12px auto 30px auto;
+        }
+
+
+        /* =========================================================
+           BANNER
+           ========================================================= */
+
+        .banner {
+            width: 100%;
+
+            background: white;
+
+            border: 1px solid #999;
+
+            box-shadow:
+                0 1px 3px rgba(0,0,0,0.35);
+
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+
+            display: block;
+
+            height: auto;
+        }
+
+
+        /* =========================================================
+           MAIN COLUMNS
+           ========================================================= */
+
+        .main-columns {
+            display: flex;
+
+            align-items: flex-start;
+
             gap: 10px;
-            margin-top: 12px;
+
+            margin-top: 10px;
         }
 
-        .sidebar {
+
+        /* =========================================================
+           LEFT SIDEBAR
+           ========================================================= */
+
+        .left-sidebar {
             width: 190px;
+
+            flex-shrink: 0;
         }
 
-        .content {
+
+        /* =========================================================
+           CONTENT
+           ========================================================= */
+
+        .main-content {
             flex: 1;
+
+            min-width: 0;
         }
+
+
+        /* =========================================================
+           BOXES
+           ========================================================= */
 
         .box {
-            background: white;
-            border: 1px solid #aaa;
+            background: #fff;
+
+            border: 1px solid #999;
+
             margin-bottom: 10px;
-            box-shadow: 0 1px 2px #aaa;
+
+            box-shadow:
+                0 1px 2px rgba(0,0,0,0.25);
         }
 
         .box-title {
-            background: linear-gradient(#eeeeee, #cccccc);
-            border-bottom: 1px solid #aaa;
-            padding: 7px 9px;
+            height: 30px;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 0 9px;
+
             font-weight: bold;
+
             color: #333;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #f7f7f7 0%,
+                    #dedede 48%,
+                    #c9c9c9 50%,
+                    #e8e8e8 100%
+                );
+
+            border-bottom: 1px solid #999;
+
+            text-shadow: 0 1px white;
         }
 
         .box-content {
             padding: 10px;
         }
 
-        .icon-link {
+
+        /* =========================================================
+           SIDE ICON MENU
+           ========================================================= */
+
+        .side-link {
+            min-height: 39px;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 5px 7px;
+
+            color: #333;
+
+            text-decoration: none;
+
+            border-bottom: 1px solid #ddd;
+
+            background: #fff;
+        }
+
+        .side-link:hover {
+            background: #e8f4fc;
+        }
+
+        .side-icon {
+            width: 28px;
+            height: 28px;
+
+            margin-right: 8px;
+
+            background:
+                linear-gradient(
+                    #e9e9e9,
+                    #c8c8c8
+                );
+
+            border: 1px solid #999;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-size: 15px;
+        }
+
+
+        /* =========================================================
+           WELCOME
+           ========================================================= */
+
+        .welcome-title {
+            font-size: 20px;
+
+            color: #333;
+
+            margin-bottom: 5px;
+        }
+
+        .small-text {
+            color: #777;
+        }
+
+
+        /* =========================================================
+           PEOPLE
+           ========================================================= */
+
+        .person {
+            display: flex;
+
+            align-items: center;
+
+            min-height: 62px;
+
+            padding: 7px;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+        .person:last-child {
+            border-bottom: none;
+        }
+
+        .person-avatar {
+            width: 45px;
+            height: 45px;
+
+            border: 1px solid #999;
+
+            margin-right: 9px;
+
+            background: #eee;
+
             display: flex;
             align-items: center;
-            padding: 7px;
+            justify-content: center;
+
+            overflow: hidden;
+
+            flex-shrink: 0;
+        }
+
+        .person-avatar img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+
+        .person-info {
+            flex: 1;
+
+            min-width: 0;
+        }
+
+        .person-name {
+            font-weight: bold;
+
+            color: #1671aa;
+
+            margin-bottom: 3px;
+        }
+
+        .person-description {
+            color: #777;
+
+            font-size: 11px;
+        }
+
+
+        /* =========================================================
+           BADGES
+           ========================================================= */
+
+        .badge {
+            display: inline-flex;
+
+            align-items: center;
+
+            margin-left: 5px;
+
+            vertical-align: middle;
+        }
+
+        .badge img {
+            max-width: 80px;
+            max-height: 28px;
+
+            width: auto;
+            height: auto;
+
+            display: block;
+        }
+
+
+        /* =========================================================
+           IYXLER SPECIAL NAME
+           ========================================================= */
+
+        .iyxler-name {
+            display: inline-flex;
+
+            align-items: center;
+
+            vertical-align: middle;
+        }
+
+        .iyxler-name img {
+            max-width: 175px;
+            max-height: 35px;
+
+            display: block;
+        }
+
+
+        /* =========================================================
+           ROLE AREA
+           ========================================================= */
+
+        .role-title {
+            margin: 10px 0 5px 0;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            color: #555;
+
+            border-bottom: 1px solid #ccc;
+
+            padding-bottom: 4px;
+        }
+
+
+        /* =========================================================
+           SPECIAL / BEST FRIENDS
+           ========================================================= */
+
+        .special-friends {
+            padding: 8px;
+
+            background:
+                linear-gradient(
+                    #fff,
+                    #f0f0f0
+                );
+
             border-bottom: 1px solid #ddd;
+        }
+
+        .special-friends img {
+            max-width: 110px;
+            max-height: 35px;
+
+            display: block;
+
+            margin-bottom: 4px;
+        }
+
+
+        /* =========================================================
+           BUTTONS
+           ========================================================= */
+
+        .old-button {
+            display: inline-block;
+
+            padding: 5px 12px;
+
+            border: 1px solid #777;
+
+            border-radius: 2px;
+
+            background:
+                linear-gradient(
+                    #ffffff,
+                    #eeeeee 48%,
+                    #d0d0d0 50%,
+                    #e5e5e5
+                );
+
+            color: #333;
+
             text-decoration: none;
+
+            font-weight: bold;
+
+            box-shadow:
+                inset 0 1px white;
+
+            cursor: pointer;
+        }
+
+        .old-button:hover {
+            background:
+                linear-gradient(
+                    #ffffff,
+                    #dceffc
+                );
+        }
+
+
+        /* =========================================================
+           CHAT PREVIEW
+           ========================================================= */
+
+        .chat-message {
+            padding: 6px;
+
+            border-bottom: 1px solid #eee;
+        }
+
+        .chat-name {
+            font-weight: bold;
+
+            color: #1671aa;
+        }
+
+        .chat-text {
             color: #333;
         }
 
-        .icon-link:hover {
-            background: #e8f3fb;
+        .chat-input {
+            width: 100%;
+
+            height: 32px;
+
+            border: 1px solid #999;
+
+            padding: 5px;
+
+            margin-top: 7px;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 12px;
         }
 
-        .icon {
-            width: 24px;
-            height: 24px;
-            margin-right: 8px;
-            background: #bbb;
-            border: 1px solid #888;
-        }
 
-        .welcome {
-            font-size: 18px;
-            color: #333;
-        }
+        /* =========================================================
+           FOOTER
+           ========================================================= */
 
         .footer {
             text-align: center;
+
             color: #777;
-            margin: 25px;
+
             font-size: 11px;
+
+            padding: 20px 0;
         }
+
+        .footer a {
+            color: #477da0;
+
+            text-decoration: none;
+        }
+
+
+        /* =========================================================
+           MOBILE
+           ========================================================= */
+
+        @media (max-width: 750px) {
+
+            .page {
+                width: 100%;
+            }
+
+            .top-header {
+                height: auto;
+
+                min-height: 52px;
+
+                flex-wrap: wrap;
+
+                padding: 5px;
+            }
+
+            .navigation {
+                order: 3;
+
+                width: 100%;
+
+                height: auto;
+
+                overflow-x: auto;
+            }
+
+            .account-area {
+                margin-left: auto;
+            }
+
+            .main-columns {
+                flex-direction: column;
+            }
+
+            .left-sidebar {
+                width: 100%;
+            }
+
+            .banner img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
     </style>
 </head>
 
+
 <body>
 
-    <div class="topbar">
 
-        <div class="logo">
-            ROBING
-        </div>
+<!-- =============================================================
+     HEADER
+     ============================================================= -->
 
-        <div class="nav">
-            <a href="#">Home</a>
-            <a href="#">Games</a>
-            <a href="#">People</a>
-            <a href="#">Catalog</a>
-        </div>
+<header class="top-header">
 
-        <div class="account">
-            Welcome, Guest!
-        </div>
+    <div class="site-logo">
+
+        <!-- Replace logo.png with your logo if you have one -->
+
+        <img
+            src="images/logo.png"
+            alt="Robing"
+        >
 
     </div>
 
-    <div class="page">
 
-        <div class="banner">
-            <h1>ROBING</h1>
-        </div>
+    <nav class="navigation">
 
-        <div class="columns">
+        <a href="#home">
+            Home
+        </a>
 
-            <div class="sidebar">
+        <a href="#games">
+            Games
+        </a>
 
-                <div class="box">
+        <a href="#people">
+            People
+        </a>
 
-                    <div class="box-title">
-                        Navigation
+        <a href="#catalog">
+            Catalog
+        </a>
+
+        <a href="#messages">
+            Messages
+        </a>
+
+    </nav>
+
+
+    <div class="account-area">
+
+        Welcome,
+
+        <a href="#profile">
+            Guest
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =============================================================
+     PAGE
+     ============================================================= -->
+
+<div class="page">
+
+
+    <!-- =========================================================
+         BANNER
+         ========================================================= -->
+
+    <div class="banner">
+
+        <img
+            src="images/banner.png"
+            alt="Robing Banner"
+        >
+
+    </div>
+
+
+
+    <!-- =========================================================
+         COLUMNS
+         ========================================================= -->
+
+    <div class="main-columns">
+
+
+        <!-- =====================================================
+             LEFT SIDEBAR
+             ===================================================== -->
+
+        <aside class="left-sidebar">
+
+
+            <!-- NAVIGATION -->
+
+            <div class="box">
+
+                <div class="box-title">
+                    Navigation
+                </div>
+
+
+                <a class="side-link" href="#home">
+
+                    <div class="side-icon">
+                        🏠
                     </div>
 
-                    <a class="icon-link" href="#">
-                        <div class="icon"></div>
-                        Home
+                    Home
+
+                </a>
+
+
+                <a class="side-link" href="#profile">
+
+                    <div class="side-icon">
+                        👤
+                    </div>
+
+                    My Profile
+
+                </a>
+
+
+                <a class="side-link" href="#friends">
+
+                    <div class="side-icon">
+                        👥
+                    </div>
+
+                    Friends
+
+                </a>
+
+
+                <a class="side-link" href="#messages">
+
+                    <div class="side-icon">
+                        💬
+                    </div>
+
+                    Messages
+
+                </a>
+
+
+                <a class="side-link" href="#games">
+
+                    <div class="side-icon">
+                        🎮
+                    </div>
+
+                    Games
+
+                </a>
+
+
+                <a class="side-link" href="#people">
+
+                    <div class="side-icon">
+                        👤
+                    </div>
+
+                    People
+
+                </a>
+
+
+                <a class="side-link" href="#catalog">
+
+                    <div class="side-icon">
+                        🛍
+                    </div>
+
+                    Catalog
+
+                </a>
+
+            </div>
+
+
+
+            <!-- BEST FRIENDS -->
+
+            <div class="box">
+
+                <div class="box-title">
+                    Best Friends
+                </div>
+
+
+                <div class="special-friends">
+
+                    <img
+                        src="images/special.png"
+                        alt="Best Friends"
+                    >
+
+                    <b>
+                        Best Friends
+                    </b>
+
+                    <br>
+
+                    <span class="small-text">
+                        Your closest friends appear here.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ACCOUNT -->
+
+            <div class="box">
+
+                <div class="box-title">
+                    Account
+                </div>
+
+
+                <div class="box-content">
+
+                    <a class="old-button" href="#login">
+                        Login
                     </a>
 
-                    <a class="icon-link" href="#">
-                        <div class="icon"></div>
-                        Profile
-                    </a>
+                    <br><br>
 
-                    <a class="icon-link" href="#">
-                        <div class="icon"></div>
-                        Friends
-                    </a>
-
-                    <a class="icon-link" href="#">
-                        <div class="icon"></div>
-                        Messages
-                    </a>
-
-                    <a class="icon-link" href="#">
-                        <div class="icon"></div>
-                        Games
+                    <a class="old-button" href="#register">
+                        Register
                     </a>
 
                 </div>
 
             </div>
 
-            <div class="content">
 
-                <div class="box">
+        </aside>
 
-                    <div class="box-title">
-                        Welcome to Robing!
+
+
+        <!-- =====================================================
+             MAIN CONTENT
+             ===================================================== -->
+
+        <main class="main-content">
+
+
+            <!-- =================================================
+                 WELCOME
+                 ================================================= -->
+
+            <section class="box" id="home">
+
+                <div class="box-title">
+                    Welcome to Robing!
+                </div>
+
+
+                <div class="box-content">
+
+                    <div class="welcome-title">
+                        Welcome!
                     </div>
 
-                    <div class="box-content">
+                    <p>
+                        Welcome to Robing, a community website
+                        inspired by the classic era of Roblox.
+                    </p>
 
-                        <div class="welcome">
-                            Welcome!
+                    <p class="small-text">
+                        Explore games, meet people, chat with
+                        friends, and discover the site.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PEOPLE
+                 ================================================= -->
+
+            <section class="box" id="people">
+
+                <div class="box-title">
+                    People
+                </div>
+
+
+                <div class="box-content">
+
+
+                    <!-- ================================
+                         SITE ADMINS
+                         ================================ -->
+
+                    <div class="role-title">
+
+                        <img
+                            src="images/admin.png"
+                            alt="Site Admin"
+                            style="
+                                max-height:30px;
+                                max-width:130px;
+                                vertical-align:middle;
+                            "
+                        >
+
+                    </div>
+
+
+                    <!-- IYXLER -->
+
+                    <div class="person">
+
+                        <div class="person-avatar">
+
+                            <img
+                                src="images/iyxler.png"
+                                alt="iyxlerfornoreason"
+                            >
+
                         </div>
 
-                        <p>
-                            This is your Robing homepage.
-                        </p>
 
-                        <p>
-                            More features are coming soon.
-                        </p>
+                        <div class="person-info">
+
+                            <div class="person-name">
+
+                                <span class="iyxler-name">
+
+                                    <img
+                                        src="images/iyxler.png"
+                                        alt="iyxlerfornoreason"
+                                    >
+
+                                </span>
+
+
+                                <span class="badge">
+
+                                    <img
+                                        src="images/devbadge.png"
+                                        alt="SuperMod"
+                                    >
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="person-description">
+
+                                Site administrator and owner.
+
+                            </div>
+
+                        </div>
 
                     </div>
+
+
+
+                    <!-- ================================
+                         SITE DEVELOPERS
+                         ================================ -->
+
+                    <div class="role-title">
+
+                        <img
+                            src="images/devsite.png"
+                            alt="Developer of the site"
+                            style="
+                                max-height:30px;
+                                max-width:190px;
+                                vertical-align:middle;
+                            "
+                        >
+
+                    </div>
+
+
+                    <div class="person">
+
+                        <div class="person-avatar">
+
+                            <img
+                                src="images/iyxler.png"
+                                alt="iyxlerfornoreason"
+                            >
+
+                        </div>
+
+
+                        <div class="person-info">
+
+                            <div class="person-name">
+
+                                <span class="iyxler-name">
+
+                                    <img
+                                        src="images/iyxler.png"
+                                        alt="iyxlerfornoreason"
+                                    >
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="person-description">
+
+                                Developer of the site!
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ================================
+                         BETA TESTERS
+                         ================================ -->
+
+                    <div class="role-title">
+
+                        <img
+                            src="images/betatester.png"
+                            alt="Beta Tester"
+                            style="
+                                max-height:30px;
+                                max-width:150px;
+                                vertical-align:middle;
+                            "
+                        >
+
+                    </div>
+
+
+                    <div class="person">
+
+                        <div class="person-avatar">
+
+                            <div>
+                                👤
+                            </div>
+
+                        </div>
+
+
+                        <div class="person-info">
+
+                            <div class="person-name">
+
+                                ExampleBetaTester
+
+
+                                <span class="badge">
+
+                                    <img
+                                        src="images/betatester.png"
+                                        alt="Beta Tester"
+                                    >
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="person-description">
+
+                                Beta tester.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="person">
+
+                        <div class="person-avatar">
+
+                            <div>
+                                👤
+                            </div>
+
+                        </div>
+
+
+                        <div class="person-info">
+
+                            <div class="person-name">
+
+                                AnotherTester
+
+
+                                <span class="badge">
+
+                                    <img
+                                        src="images/betatester.png"
+                                        alt="Beta Tester"
+                                    >
+
+                                </span>
+
+                            </div>
+
+
+                            <div class="person-description">
+
+                                Beta tester.
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
 
                 </div>
 
-                <div class="box">
+            </section>
 
-                    <div class="box-title">
-                        What's New
+
+
+            <!-- =================================================
+                 CHAT
+                 ================================================= -->
+
+            <section class="box" id="messages">
+
+                <div class="box-title">
+                    Chat
+                </div>
+
+
+                <div class="box-content">
+
+
+                    <div class="chat-message">
+
+                        <span class="chat-name">
+                            System:
+                        </span>
+
+                        <span class="chat-text">
+                            Welcome to Robing!
+                        </span>
+
                     </div>
 
-                    <div class="box-content">
-                        New website features coming soon!
+
+                    <div class="chat-message">
+
+                        <span class="chat-name">
+                            Guest:
+                        </span>
+
+                        <span class="chat-text">
+                            Hello!
+                        </span>
+
                     </div>
+
+
+                    <input
+                        class="chat-input"
+                        type="text"
+                        placeholder="Type a message..."
+                    >
+
+
+                    <br><br>
+
+
+                    <button
+                        class="old-button"
+                        type="button"
+                    >
+                        Send
+                    </button>
+
 
                 </div>
 
-            </div>
+            </section>
 
-        </div>
 
-        <div class="footer">
-            Robing © 2026 · All rights reserved
-        </div>
+
+            <!-- =================================================
+                 GAMES
+                 ================================================= -->
+
+            <section class="box" id="games">
+
+                <div class="box-title">
+                    Games
+                </div>
+
+
+                <div class="box-content">
+
+                    <b>
+                        Games
+                    </b>
+
+                    <p class="small-text">
+                        Games will appear here.
+                    </p>
+
+                    <a
+                        class="old-button"
+                        href="#games"
+                    >
+                        Browse Games
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 CATALOG
+                 ================================================= -->
+
+            <section class="box" id="catalog">
+
+                <div class="box-title">
+                    Catalog
+                </div>
+
+
+                <div class="box-content">
+
+                    <b>
+                        Catalog
+                    </b>
+
+                    <p class="small-text">
+                        Items and creations will appear here.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
 
     </div>
+
+
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+
+    <footer class="footer">
+
+        <a href="#">
+            About
+        </a>
+
+        &nbsp;|&nbsp;
+
+        <a href="#people">
+            People
+        </a>
+
+        &nbsp;|&nbsp;
+
+        <a href="#games">
+            Games
+        </a>
+
+        &nbsp;|&nbsp;
+
+        <a href="#contact">
+            Contact
+        </a>
+
+        <br><br>
+
+        Robing © 2026
+
+    </footer>
+
+
+</div>
+
 
 </body>
 </html>
