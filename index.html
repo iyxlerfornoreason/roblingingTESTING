@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Robing</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #d6e9f7;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+
+        .topbar {
+            height: 42px;
+            background: linear-gradient(#6fb1df, #3f8fc7);
+            border-bottom: 1px solid #245d83;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 1px 1px #555;
+            margin-right: 30px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 5px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            padding: 7px 12px;
+            border: 1px solid #3477a3;
+            background: linear-gradient(#78b9e1, #4b96c7);
+            border-radius: 2px;
+        }
+
+        .nav a:hover {
+            background: linear-gradient(#91c9e9, #5ba3d1);
+        }
+
+        .account {
+            margin-left: auto;
+            color: white;
+        }
+
+        .page {
+            width: 960px;
+            margin: 12px auto;
+        }
+
+        .banner {
+            height: 180px;
+            background: white;
+            border: 1px solid #aaa;
+            box-shadow: 0 1px 3px #999;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner h1 {
+            font-size: 64px;
+            color: white;
+            -webkit-text-stroke: 4px #ff2222;
+            text-shadow: 2px 3px #777;
+            transform: rotate(-2deg);
+        }
+
+        .columns {
+            display: flex;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .sidebar {
+            width: 190px;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        .box {
+            background: white;
+            border: 1px solid #aaa;
+            margin-bottom: 10px;
+            box-shadow: 0 1px 2px #aaa;
+        }
+
+        .box-title {
+            background: linear-gradient(#eeeeee, #cccccc);
+            border-bottom: 1px solid #aaa;
+            padding: 7px 9px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .box-content {
+            padding: 10px;
+        }
+
+        .icon-link {
+            display: flex;
+            align-items: center;
+            padding: 7px;
+            border-bottom: 1px solid #ddd;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .icon-link:hover {
+            background: #e8f3fb;
+        }
+
+        .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            background: #bbb;
+            border: 1px solid #888;
+        }
+
+        .welcome {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .footer {
+            text-align: center;
+            color: #777;
+            margin: 25px;
+            font-size: 11px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topbar">
+
+        <div class="logo">
+            ROBING
+        </div>
+
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#">Games</a>
+            <a href="#">People</a>
+            <a href="#">Catalog</a>
+        </div>
+
+        <div class="account">
+            Welcome, Guest!
+        </div>
+
+    </div>
+
+    <div class="page">
+
+        <div class="banner">
+            <h1>ROBING</h1>
+        </div>
+
+        <div class="columns">
+
+            <div class="sidebar">
+
+                <div class="box">
+
+                    <div class="box-title">
+                        Navigation
+                    </div>
+
+                    <a class="icon-link" href="#">
+                        <div class="icon"></div>
+                        Home
+                    </a>
+
+                    <a class="icon-link" href="#">
+                        <div class="icon"></div>
+                        Profile
+                    </a>
+
+                    <a class="icon-link" href="#">
+                        <div class="icon"></div>
+                        Friends
+                    </a>
+
+                    <a class="icon-link" href="#">
+                        <div class="icon"></div>
+                        Messages
+                    </a>
+
+                    <a class="icon-link" href="#">
+                        <div class="icon"></div>
+                        Games
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="content">
+
+                <div class="box">
+
+                    <div class="box-title">
+                        Welcome to Robing!
+                    </div>
+
+                    <div class="box-content">
+
+                        <div class="welcome">
+                            Welcome!
+                        </div>
+
+                        <p>
+                            This is your Robing homepage.
+                        </p>
+
+                        <p>
+                            More features are coming soon.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="box">
+
+                    <div class="box-title">
+                        What's New
+                    </div>
+
+                    <div class="box-content">
+                        New website features coming soon!
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            Robing © 2026 · All rights reserved
+        </div>
+
+    </div>
+
+</body>
+</html>
